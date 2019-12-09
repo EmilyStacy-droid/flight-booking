@@ -5,13 +5,13 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
   })
 export class SearchService {
-    baseURL = "localhost/8080/flights";
+    baseURL = "httpg://localhost:8080/flights";
     // ?origin={origin}&destination={destination}&date=2019-12-09"
 
     constructor(public http: HttpClient) {}
 
-    addSearch (origin, destination): Observable<any> {
-        return this.http.get<any>(this.baseURL + `?origin=${origin}&destination=${destination}&date=2019-12-09`)
+    addSearch (origin, destination,date): Observable<any> {
+        return this.http.get<any>(this.baseURL + `?origin=${origin}&destination=${destination}&date=${date}`)
       }
 
 }

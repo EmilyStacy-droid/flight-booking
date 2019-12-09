@@ -16,7 +16,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {SearchService} from './search/search.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FlightItemComponent } from './flight-item/flight-item.component';
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -44,7 +44,9 @@ import { FlightItemComponent } from './flight-item/flight-item.component';
     HttpClientModule
   ],
   providers: [
-    SearchService
+    SearchService,
+    DatePipe
+
 
   ],
   bootstrap: [AppComponent]

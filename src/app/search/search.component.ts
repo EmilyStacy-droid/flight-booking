@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import airports from '../data/airports';
 import {SearchService} from './search.service';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker';
+import {DatePipe} from '@angular/common';
 
 
 @Component({
@@ -16,8 +18,8 @@ export class SearchComponent implements OnInit {
   // date:string;
   // originAirport:string;
   // destinationAirport:string;
-
-  picker:FormControl = new FormControl();;
+  date;
+  events: string[] = [];
   startDate = new Date(2019, 12, 1);
   origin: FormControl = new FormControl();
   destination: FormControl = new FormControl();
@@ -26,7 +28,7 @@ export class SearchComponent implements OnInit {
   filteredDestination: Observable<string[]>;
   results: any;
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService, private datePipe: DatePipe) { }
 
   ngOnInit() {
     this.filteredOrigin = this.origin.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
@@ -42,9 +44,18 @@ export class SearchComponent implements OnInit {
     return this.airports.filter(airport => airport.toLowerCase().includes(filterValue));
   }
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.target.value}`);
+    this.date = this.datePipe.transform(new Date(this.events[0].toString()),"yyyy-MM-dd");
+
+  }
+
   onSubmit() {
-    console.log("this works");
-    console.log('picker is' + this.picker.value);
-    this.searchService.addSearch(this.origin.value,this.destination.value);
+
+    this.results = this.searchService.addSearch(this.origin.value, this.destination.value, this.date).subscribe(data => {
+      console.log(data)
+    })
+
+
   }
 }
