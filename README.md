@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
+# Problem Statement
+
+You’re tasked with creating a flight booking application that provides flight options for the longest travel possible in a single day between origin and destination,. YOu should be able to search for flights, book flights (checkout), and retrieve your booking after checkout.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
