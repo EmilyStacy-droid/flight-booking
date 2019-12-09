@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {SearchService} from './search/search.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {DatePipe} from '@angular/common';
+import { FlightItemComponent } from './flight-item/flight-item.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {DatePipe} from '@angular/common';
     components.FlightListComponent,
     components.BookingComponent,
     components.FlightBookedComponent,
+    FlightItemComponent
   ],
   imports: [
     BrowserModule,
