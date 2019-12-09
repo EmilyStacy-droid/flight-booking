@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import airportsData from '../data/airports';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit {
   airports: string[] = airportsData.map((airport: Airport) => airport.code);
   filteredOrigin: Observable<string[]>;
   filteredDestination: Observable<string[]>;
+  searchForm:FormGroup;
 
   constructor() { }
 
@@ -33,4 +34,7 @@ export class SearchComponent implements OnInit {
     return this.airports.filter(airport => airport.toLowerCase().includes(filterValue));
   }
 
+  onSubmit() {
+    
+  }
 }

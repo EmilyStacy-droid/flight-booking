@@ -14,6 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatInputModule} from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import {searchService} from './search/search.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     components.SearchComponent,
     components.FlightListComponent,
     components.BookingComponent,
-    components.FlightBookedComponent  
+    components.FlightBookedComponent
+    // searchService
   ],
   imports: [
     BrowserModule,
@@ -37,9 +40,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatAutocompleteModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
