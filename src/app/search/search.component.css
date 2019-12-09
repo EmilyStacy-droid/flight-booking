@@ -1,0 +1,9 @@
+.search-root {
+    display: flex;
+    justify-content: center;
+}
+
+.searchCard {
+    max-width: 400px;
+}
+    
