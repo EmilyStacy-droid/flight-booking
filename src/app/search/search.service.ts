@@ -9,9 +9,9 @@ export class SearchService {
 
     constructor(public http: HttpClient) {}
 
-    addSearch (origin, destination): Observable<any> {
+    addSearch (origin, destination, date): Observable<any> {
         
-        return this.http.post<any>(this.baseURL, origin, destination)
+        return this.http.post<any>(this.baseURL, origin, destination,date)
       }
 
 }
