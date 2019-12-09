@@ -1,8 +1,17 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// @Injectable({
-//     providedIn: 'root'
-//   })
-// export class searchService {
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+@Injectable({
+    providedIn: 'root'
+  })
+export class SearchService {
+    baseURL = "localhost/8080/flights";
+    // ?origin={origin}&destination={destination}&date=2019-12-09"
 
-// }
+    constructor(public http: HttpClient) {}
+
+    addSearch (origin, destination): Observable<any> {
+        return this.http.get<any>(this.baseURL + `?origin=${origin}&destination=${destination}&date=2019-12-09`)
+      }
+
+}
