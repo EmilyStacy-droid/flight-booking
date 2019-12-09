@@ -10,7 +10,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
-
+import { MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,6 +33,11 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     MatDatepickerModule,
     MatFormFieldModule,
     MatMomentDateModule,
+    MatIconModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
