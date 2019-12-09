@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import airportsData from '../data/airports';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import airports from '../data/airports';
+import {SearchService} from './search.service';
 
 
 @Component({
@@ -12,6 +13,10 @@ import airports from '../data/airports';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  // date:string;
+  // originAirport:string;
+  // destinationAirport:string;
+
   picker;
   startDate = new Date(2019, 12, 1);
   origin: FormControl = new FormControl();
@@ -19,13 +24,13 @@ export class SearchComponent implements OnInit {
   airports: string[] = airportsData.map((airport: Airport) => airport.code);
   filteredOrigin: Observable<string[]>;
   filteredDestination: Observable<string[]>;
-  searchForm:FormGroup;
 
-  constructor() { }
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
     this.filteredOrigin = this.origin.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
     this.filteredDestination = this.destination.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
+   
   }
 
   private _filter(value: string): string[] {
@@ -35,6 +40,10 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
+
+    //console.log("picker is" +this.picker);
+    // var searchURL = "localhost/8080/flights?origin=" + this.origin.value +"& destination=" + this.destination.value;
+    console.log("this works");
     
   }
 }
