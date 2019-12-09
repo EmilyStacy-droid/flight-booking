@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+picker;
+startDate = new Date(1990, 0, 1);
 
   constructor() { }
 
