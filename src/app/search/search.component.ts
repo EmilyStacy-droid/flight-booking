@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   // originAirport:string;
   // destinationAirport:string;
 
-  picker;
+  picker:FormControl = new FormControl();;
   startDate = new Date(2019, 12, 1);
   origin: FormControl = new FormControl();
   destination: FormControl = new FormControl();
@@ -44,10 +44,16 @@ export class SearchComponent implements OnInit {
 
     //console.log("picker is" +this.picker);
     // var searchURL = "localhost/8080/flights?origin=" + this.origin.value +"& destination=" + this.destination.value;
+<<<<<<< HEAD
     // console.log("this works");
     this.results = this.searchService.addSearch(this.origin, this.destination).subscribe(data => {
       console.log(data)
     })
+=======
+    console.log("this works");
+    console.log('picker is' + this.picker.value);
+    this.searchService.addSearch(this.origin.value,this.destination.value);
+>>>>>>> b8ceabc731b8f1995d469c3d9f7cd35c28145777
     
   }
 }
