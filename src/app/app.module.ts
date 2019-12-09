@@ -14,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatInputModule} from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import {searchService} from './search/search.service';
+import {SearchService} from './search/search.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
@@ -25,7 +25,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     components.FlightListComponent,
     components.BookingComponent,
     components.FlightBookedComponent
-    // searchService
+    //searchService
   ],
   imports: [
     BrowserModule,
@@ -44,6 +44,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
+    SearchService
   
   ],
   bootstrap: [AppComponent]
