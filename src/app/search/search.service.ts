@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
   })
 export class SearchService {
-    baseURL = "http://localhost:8080/flights";
+    baseURL = "httpg://localhost:8080/flights";
     // ?origin={origin}&destination={destination}&date=2019-12-09"
 
     constructor(public http: HttpClient) {}
