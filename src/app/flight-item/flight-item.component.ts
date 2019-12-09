@@ -1,12 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-flight-item',
   templateUrl: './flight-item.component.html',
   styleUrls: ['./flight-item.component.css']
 })
-export class FlightItemComponent implements OnInit {
-  @Input() itinerary;
+export class FlightItemComponent implements OnInit, OnChanges {
+  @Input() itinerary: any;
   @Input() origin: string;
   @Input() dest: string;
   totalTime: string;
@@ -15,6 +15,9 @@ export class FlightItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
     this.totalTime = this.itinerary.totalTime;
     this.segments = this.itinerary.listOfFlights.map(flight => flight.origin.code).join(' - ') + ' - ' + this.dest;
   }

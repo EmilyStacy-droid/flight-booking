@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  baseUrl:'localhost/8080/stubInits?'
+  baseUrl:'localhost:8080/flights'
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

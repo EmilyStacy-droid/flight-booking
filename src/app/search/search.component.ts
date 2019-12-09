@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
   airports: string[] = airportsData.map((airport: Airport) => airport.code);
   filteredOrigin: Observable<string[]>;
   filteredDestination: Observable<string[]>;
+  results: any;
 
   constructor(private searchService: SearchService) { }
 
@@ -42,12 +43,8 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
-
-    //console.log("picker is" +this.picker);
-    // var searchURL = "localhost/8080/flights?origin=" + this.origin.value +"& destination=" + this.destination.value;
     console.log("this works");
     console.log('picker is' + this.picker.value);
     this.searchService.addSearch(this.origin.value,this.destination.value);
-
   }
 }

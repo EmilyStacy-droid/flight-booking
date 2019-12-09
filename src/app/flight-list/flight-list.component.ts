@@ -9,13 +9,13 @@ import itineraries from '../data/itinerary';
 export class FlightListComponent implements OnInit {
   @Input() origin: string = 'DFW';
   @Input() dest: string = 'ORD';
-  itineraries = itineraries;
+  itineraries = [];
 
 
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.itineraries);
+    // console.log(this.itineraries);
   }
 }
