@@ -16,6 +16,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {SearchService} from './search/search.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FlightItemComponent } from './flight-item/flight-item.component';
 
 
 @NgModule({
@@ -24,8 +25,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     components.SearchComponent,
     components.FlightListComponent,
     components.BookingComponent,
-    components.FlightBookedComponent
-    //searchService
+    components.FlightBookedComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
   ],
   providers: [
     SearchService
-  
+
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import itineraries from '../data/itinerary';
 
 @Component({
   selector: 'app-flight-list',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flight-list.component.css']
 })
 export class FlightListComponent implements OnInit {
+  @Input() origin: string = 'DFW';
+  @Input() dest: string = 'ORD';
+  itineraries = itineraries;
+
+
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.itineraries);
   }
-
 }

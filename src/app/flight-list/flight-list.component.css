@@ -1,0 +1,11 @@
+.flight-list-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  /* flex-direction: ; */
+}
+
+.flight-list {
+  display: flex;
+  margin: 10px;
+}

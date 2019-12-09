@@ -30,11 +30,13 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.filteredOrigin = this.origin.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
     this.filteredDestination = this.destination.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
-   
+
   }
 
   private _filter(value: string): string[] {
     const filterValue: string = value.toLowerCase();
+
+    console.log(this.origin);
 
     return this.airports.filter(airport => airport.toLowerCase().includes(filterValue));
   }
@@ -46,6 +48,6 @@ export class SearchComponent implements OnInit {
     console.log("this works");
     console.log('picker is' + this.picker.value);
     this.searchService.addSearch(this.origin.value,this.destination.value);
-    
+
   }
 }
