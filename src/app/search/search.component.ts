@@ -7,7 +7,7 @@ import airports from '../data/airports';
 import {SearchService} from './search.service';
 import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 import {DatePipe} from '@angular/common';
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
   filteredDestination: Observable<string[]>;
   results: any;
 
-  constructor(private searchService: SearchService, private datePipe: DatePipe) { }
+  constructor(private searchService: SearchService, private datePipe: DatePipe, private router:Router) { }
 
   ngOnInit() {
     this.filteredOrigin = this.origin.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
@@ -53,7 +53,9 @@ export class SearchComponent implements OnInit {
   onSubmit() {
 
     this.results = this.searchService.addSearch(this.origin.value, this.destination.value, this.date).subscribe(data => {
-      console.log(data)
+      console.log(data);
+      this.router.navigate(['/flightlist']);
+
     })
 
 

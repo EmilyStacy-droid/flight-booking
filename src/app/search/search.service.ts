@@ -16,7 +16,6 @@ export class SearchService {
 
     addSearch (origin, destination,date): Observable<any> {
         this.passData.emit(this.http.get<any>(this.baseURL + `?origin=${origin}&destination=${destination}&date=${date}`));
-        this.router.navigate['/flightlist'];
         return this.http.get<any>(this.baseURL + `?origin=${origin}&destination=${destination}&date=${date}`);
       }
 
