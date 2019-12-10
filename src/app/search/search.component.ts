@@ -33,11 +33,13 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.filteredOrigin = this.origin.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
     this.filteredDestination = this.destination.valueChanges.pipe(startWith(''), map(value => this._filter(value)));
-   
+
   }
 
   private _filter(value: string): string[] {
     const filterValue: string = value.toLowerCase();
+
+    console.log(this.origin);
 
     return this.airports.filter(airport => airport.toLowerCase().includes(filterValue));
   }
@@ -45,15 +47,15 @@ export class SearchComponent implements OnInit {
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.target.value}`);
     this.date = this.datePipe.transform(new Date(this.events[0].toString()),"yyyy-MM-dd");
-   
+
   }
 
   onSubmit() {
-    
+
     this.results = this.searchService.addSearch(this.origin.value, this.destination.value, this.date).subscribe(data => {
       console.log(data)
     })
 
-    
+
   }
 }

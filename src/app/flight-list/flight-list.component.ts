@@ -11,8 +11,10 @@ export class FlightListComponent implements OnInit {
   @Input() origin: string = 'DFW';
   @Input() dest: string = 'ORD';
   @Input()passData:[];
-  itineraries;
   dataSubject: any;
+  itineraries = [];
+
+
 
 
   constructor(public searchService: SearchService) {
@@ -23,5 +25,6 @@ export class FlightListComponent implements OnInit {
     this.dataSubject = this.searchService.passData.subscribe(data => {
       this.itineraries = data;
     });
+    // console.log(this.itineraries);
   }
 }

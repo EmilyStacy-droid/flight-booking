@@ -1,9 +1,9 @@
 <div class="flight-list-container">
-        <h2>Flights from {{origin}} to {{dest}}</h2>
-          <div class="flight-list">
-            <app-flight-item
-              *ngFor="let itinerary of itineraries"
-              [itinerary]="itinerary"
-            ></app-flight-item>
-          </div>
-      </div>
+  <h2>Flights from {{origin}} to {{dest}}</h2>
+    <div class="flight-list">
+      <app-flight-item
+        *ngFor="let itinerary of itineraries"
+        [itinerary]="itinerary"
+      ></app-flight-item>
+    </div>
+</div>

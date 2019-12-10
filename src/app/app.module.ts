@@ -28,7 +28,6 @@ import { FlightItemComponent } from './flight-item/flight-item.component';
     components.BookingComponent,
     components.FlightBookedComponent,
     FlightItemComponent
-    //searchService
   ],
   imports: [
     BrowserModule,
@@ -49,8 +48,8 @@ import { FlightItemComponent } from './flight-item/flight-item.component';
   providers: [
     SearchService,
     DatePipe
-   
-  
+
+
   ],
   bootstrap: [AppComponent]
 })
